@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hover_button:hover {
+    background-color: var(--nextui-colors-background);
+    border: 2px solid var(--nextui-colors-primary);
+    color: var(--nextui-colors-foreground);
+}
+
+.grid_CV {
+    position: relative;
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.grid_CV__item1 {
+    grid-column: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.grid_CV__item2 {
+    grid-column: 2;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid_CV__item1 p {
+    font-size: 1.3rem;
+    max-width: 80%;
+}
+
+.slide_container {
+    overflow: hidden !important;
+    position: relative;
+    white-space: nowrap;
+    padding: 15px 0;
+    max-width: 45vw;
+}
+
+.slide_container:hover .row_techno {
+    animation-play-state: paused;
+}
+
+.slide_container::after,
+.slide_container::before {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.slide_container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg), #FFFFFF00);
+}
+
+.slide_container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg), #FFFFFF00);
+}
+
+.row_techno {
+    display: inline-flex;
+    flex-direction: row;
+    animation: 30s slide infinite linear;
+}
+
+.row_techno * {
+    margin: 0px 20px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.grid_CV__item2 img {
+    /* height: 80vh; */
+    align-self: center;
+    width: 100%;
+    aspect-ratio: 8.27/11.67;
+}
+
+.stycki_top {
+    position: sticky;
+    top: 60px;
+}
+
+.projet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-self: center;
+    margin: auto;
+    width: 100vw;
+    align-self: center;
+    padding: 0% 8vw;
+    position: relative;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#c1 {
+    grid-column: 1;
+}
+
+#c2 {
+    grid-column: 2;
+}
+
+.hide {
+    display: none;
+}
+
+.hovered {
+    grid-column: 1/3;
+    min-height: 300px;
+}
+
+.top_CV {
+    width: 70%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.zoomInput {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.range {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 10px;
+    height: 10px;
+    width: 150px;
+    background: var(--color-track);
+    margin-top: 7px;
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--color-thumb);
+    box-shadow: 0px 0px 16px 0px #AAAAAA;
+}
+
+.exp {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 80%;
+    position: relative;
+}
+
+.exp p {
+    width: 100% !important;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.arrow {
+    position: absolute;
+    width: fit-content;
+    padding: 10px;
+    bottom: 30px;
+    left: 50%;
+    right: 50%;
+    border-radius: 50%;
+    background-color: var(--color-BG);
+    cursor: pointer;
+    animation: upDown 2s infinite;
+}
+
+.arrow:hover {
+    background-color: var(--color-BG-hover);
+}
+
+@keyframes upDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.tittle_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.trip {
+    aspect-ratio: auto;
+    width: 120%;
+    height: auto;
+    overflow: scroll;
+    object-fit: fill;
+}
